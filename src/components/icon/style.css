@@ -1,0 +1,9 @@
+.active {
+	filter: invert(75%) sepia(4%) saturate(6345%) hue-rotate(182deg) brightness(109%) contrast(104%);
+	background-color: none;
+}
+
+.icon {
+	background-color: none !important;
+	cursor: pointer;
+}

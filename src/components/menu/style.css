@@ -1,0 +1,16 @@
+.menuItemAlign {
+	margin-left: 0.625rem;
+}
+
+.subMenuItemAlign {
+	margin-left: 1rem;
+}
+
+.buttonItem {
+	padding-right: 1rem;
+	text-align: right;
+}
+
+.moveButton {
+	background-color: #1e1e2e;
+}

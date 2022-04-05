@@ -1,0 +1,24 @@
+.navbar {
+	width: 3.75em;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	align-items: center;
+	padding: 32px 0 0 0;
+}
+
+.navIcons {
+	margin-top: 50px;
+	height: 10em;
+	background-color: transparent !important;
+}
+
+.iconActive {
+	width: 4em;
+	display: flex;
+	justify-content: center;
+	border-left: 3px solid !important;
+	border-radius: 0px 5px 5px 0px;
+	border-color: #99daff !important;
+}
