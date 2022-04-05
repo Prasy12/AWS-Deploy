@@ -20,7 +20,7 @@ import DispatchesListView from '../../components/list/experiments/dispatchesList
 import ShowItemsMenu from '../../components/menu/showItemsMenu';
 import AddItemsMenu from '../../components/menu/addItemsMenu';
 import { DISPATCH_HEADER } from '../../constants/tableHeaderConstants';
-import DispatchCard from '../../components/card/dispatchCard';
+import DispatchCard from '../../components/Card/dispatchCard';
 import {
 	highlightedDispatchesList,
 	allItemsList,
