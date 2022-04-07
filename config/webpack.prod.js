@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = {
 	mode: 'production',
@@ -52,8 +53,30 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(jpe?g|png|gif|svg|pdf)$/,
-				use: [{ loader: 'image-webpack-loader', options: { limit: 100000000 } }]
+				test: /\.(jpe?g|png|gif|svg)$/i,
+				type: 'asset'
+			},
+			// We recommend using only for the "production" mode
+			{
+				test: /\.(jpe?g|png|gif|svg)$/i,
+				use: [
+					{
+						loader: ImageMinimizerPlugin.loader,
+						options: {
+							minimizer: {
+								implementation: ImageMinimizerPlugin.imageminMinify,
+								options: {
+									plugins: [
+										'imagemin-gifsicle',
+										'imagemin-mozjpeg',
+										'imagemin-pngquant',
+										'imagemin-svgo'
+									]
+								}
+							}
+						}
+					}
+				]
 			},
 			{
 				test: /\.(config|json|ttf)$/,
