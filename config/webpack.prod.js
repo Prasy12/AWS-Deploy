@@ -53,18 +53,11 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(jpe?g|png|gif|svg)$/i,
+				test: /\.(png|jpg|gif)$/,
 				use: [
 					{
-						loader: ImageMinimizerPlugin.loader,
-						options: {
-							minimizer: {
-								implementation: ImageMinimizerPlugin.imageminMinify,
-								options: {
-									plugins: ['imagemin-pngquant']
-								}
-							}
-						}
+						loader: 'url-loader',
+						options: { name: '[name].[ext]' }
 					}
 				]
 			},
