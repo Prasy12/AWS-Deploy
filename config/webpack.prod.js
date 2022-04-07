@@ -54,11 +54,6 @@ module.exports = {
 			},
 			{
 				test: /\.(jpe?g|png|gif|svg)$/i,
-				type: 'asset'
-			},
-			// We recommend using only for the "production" mode
-			{
-				test: /\.(jpe?g|png|gif|svg)$/i,
 				use: [
 					{
 						loader: ImageMinimizerPlugin.loader,
@@ -66,12 +61,7 @@ module.exports = {
 							minimizer: {
 								implementation: ImageMinimizerPlugin.imageminMinify,
 								options: {
-									plugins: [
-										'imagemin-gifsicle',
-										'imagemin-mozjpeg',
-										'imagemin-pngquant',
-										'imagemin-svgo'
-									]
+									plugins: ['imagemin-pngquant']
 								}
 							}
 						}
