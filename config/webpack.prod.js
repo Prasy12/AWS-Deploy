@@ -52,13 +52,8 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(png|jpg|gif)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: { name: '[name].[ext]' }
-					}
-				]
+				test: /\.(jpe?g|png|gif|svg|pdf)$/,
+				use: [{ loader: 'image-webpack-loader', options: { limit: 100000000 } }]
 			},
 			{
 				test: /\.(config|json|ttf)$/,
